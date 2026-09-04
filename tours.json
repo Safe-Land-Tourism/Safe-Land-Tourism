@@ -1,0 +1,58 @@
+{
+  "tours": [
+    {
+      "name": "Museum of the Future Ticket",
+      "category": "Tickets",
+      "price": "AED 149",
+      "note": "per person",
+      "description": "Skip-the-line entry to Dubai's most iconic attraction.",
+      "image": "assets/museum-of-future.jpg",
+      "whatsapp": "https://wa.me/971504915900"
+    },
+    {
+      "name": "Evening Desert Safari",
+      "category": "Desert Safari",
+      "price": "AED 179",
+      "note": "per person",
+      "description": "Dune bashing, camel rides, BBQ dinner and an unforgettable desert evening.",
+      "image": "assets/desert-safari.jpg",
+      "whatsapp": "https://wa.me/971504915900"
+    },
+    {
+      "name": "Dhow Cruise Dinner",
+      "category": "Signature",
+      "price": "AED 129",
+      "note": "per person",
+      "description": "Enjoy dinner while cruising through Dubai Marina.",
+      "image": "assets/dhow-cruise.jpg",
+      "whatsapp": "https://wa.me/971504915900"
+    },
+    {
+      "name": "City Sightseeing Tour",
+      "category": "City Tours",
+      "price": "AED 99",
+      "note": "per person",
+      "description": "Explore Downtown Dubai, Marina and Old Dubai.",
+      "image": "assets/city-tour.jpg",
+      "whatsapp": "https://wa.me/971504915900"
+    },
+    {
+      "name": "Luxury Yacht Tour",
+      "category": "Signature",
+      "price": "AED 599",
+      "note": "per group",
+      "description": "Private yacht experience around Palm Jumeirah and Dubai Marina.",
+      "image": "assets/yacht.jpg",
+      "whatsapp": "https://wa.me/971504915900"
+    },
+    {
+      "name": "Helicopter Tour",
+      "category": "Signature",
+      "price": "AED 899",
+      "note": "per person",
+      "description": "See Burj Khalifa, Palm Jumeirah and Dubai's coastline from the sky.",
+      "image": "assets/helicopter.jpg",
+      "whatsapp": "https://wa.me/971504915900"
+    }
+  ]
+}
