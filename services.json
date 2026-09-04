@@ -1,0 +1,33 @@
+{
+  "groups": [
+    {
+      "title": "Tours & Tickets",
+      "items": [
+        "Group Tours",
+        "Tickets",
+        "Hotel Booking",
+        "Travel & Transport",
+        "Airport Pick & Drop"
+      ]
+    },
+    {
+      "title": "Rides & Adventures",
+      "items": [
+        "Limousine Ride",
+        "Speed Boat Tour",
+        "Sightseeing Tour",
+        "Desert Safari",
+        "City Tours"
+      ]
+    },
+    {
+      "title": "Signature Experiences",
+      "items": [
+        "Dhow Cruise Dinner",
+        "Theme Park & Water Park Tickets",
+        "Yacht Tour",
+        "Helicopter Tour"
+      ]
+    }
+  ]
+}
