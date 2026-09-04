@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safe Land Tourism LLC — Dubai Tours &amp; Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1F3A;
+    --ink-soft:#16345C;
+    --sand:#F3EEE2;
+    --sand-deep:#E8DFC9;
+    --gold:#C9A227;
+    --coral:#C6432E;
+    --white:#FFFFFF;
+    --line:rgba(11,31,58,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--sand); color:var(--ink);
+    font-family:'Inter', sans-serif; font-size:16px; line-height:1.65;
+  }
+  h1,h2,h3,.display{
+    font-family:'Big Shoulders Display', sans-serif;
+    font-weight:700; text-transform:none; margin:0; letter-spacing:.2px;
+    color:var(--ink);
+  }
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- Header ---------- */
+  header.site{ background:var(--ink); }
+  .topbar{
+    background:var(--gold); color:var(--ink); text-align:center;
+    font-size:13px; font-weight:600; padding:8px 12px;
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px; max-width:1180px; margin:0 auto; gap:20px;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand-mark{
+    width:44px; height:44px; border-radius:50%; background:var(--white);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Big Shoulders Display'; font-weight:900; color:var(--ink); font-size:20px;
+    flex-shrink:0;
+  }
+  .brand-name{ color:var(--white); line-height:1.2; }
+  .brand-name .full{ font-size:19px; font-weight:700; letter-spacing:.3px; }
+  .brand-name .sub{ font-size:11px; color:#B9C6D8; font-family:'Inter'; letter-spacing:1px; }
+  .nav-links{ display:flex; gap:30px; font-size:14px; color:#DCE4EE; }
+  .nav-links a:hover{ color:var(--gold); }
+  .nav-cta{
+    display:flex; align-items:center; gap:10px;
+    background:var(--gold); color:var(--ink); padding:11px 20px;
+    border-radius:3px; font-weight:700; font-size:14px; white-space:nowrap;
+  }
+  @media (max-width:900px){ .nav-links{display:none;} }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    background:linear-gradient(180deg,#0A1830 0%, #12294D 45%, #1C3B66 100%);
+    padding:70px 6vw 0;
+    min-height:600px;
+  }
+  .hero-inner{
+    position:relative; z-index:3;
+    display:grid; grid-template-columns:1.05fr .95fr; gap:30px; align-items:center;
+  }
+  .hero-eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    color:var(--gold); font-size:13px; font-weight:600; letter-spacing:.5px;
+    margin-bottom:18px;
+  }
+  .hero-eyebrow::before{ content:""; width:28px; height:1px; background:var(--gold); }
+  .hero h1{
+    color:var(--white); font-size:clamp(40px,5.4vw,68px); line-height:.98;
+  }
+  .hero h1 .accent{ color:var(--gold); }
+  .hero p.lead{
+    color:#C9D3E2; font-size:17px; max-width:44ch; margin-top:20px;
+  }
+  .ticket-tag{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--coral); color:var(--white); padding:11px 20px;
+    border-radius:2px; font-weight:700; font-size:14px; margin-top:26px;
+  }
+  .hero-btns{ display:flex; gap:14px; margin-top:28px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:14px 28px;
+    border-radius:2px; font-size:14px; font-weight:600; border:1px solid transparent;
+    transition:background .18s, color .18s, border-color .18s;
+  }
+  .btn.gold{ background:var(--gold); color:var(--ink); }
+  .btn.gold:hover{ background:var(--white); }
+  .btn.outline{ border-color:rgba(255,255,255,.4); color:var(--white); }
+  .btn.outline:hover{ background:rgba(255,255,255,.1); }
+
+  .hero-art{ position:relative; height:440px; }
+  .ring{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:340px; height:340px; border-radius:50%;
+    border:26px solid rgba(201,162,39,.9);
+    box-shadow: inset 0 0 0 3px rgba(255,255,255,.15);
+  }
+  .ring::before{
+    content:""; position:absolute; inset:-26px; border-radius:50%;
+    border:1px solid rgba(255,255,255,.25);
+  }
+  .tower{
+    position:absolute; right:6%; bottom:0; width:10px; background:linear-gradient(#DCE4EE,#8EA0BC);
+    box-shadow:0 0 18px rgba(220,228,238,.5);
+  }
+  .skyline{ position:absolute; left:0; right:0; bottom:0; height:120px; }
+  .skyline .bldg{ position:absolute; bottom:0; background:#0A1830; }
+  .caption-card{
+    position:absolute; left:0; bottom:26px; background:rgba(243,238,226,.96);
+    color:var(--ink); padding:14px 18px; max-width:230px; font-size:13px; border-radius:2px;
+  }
+  .caption-card strong{ display:block; font-family:'Big Shoulders Display'; font-size:16px; margin-bottom:2px; }
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-art{height:280px; margin-top:20px;}
+  }
+
+  /* ---------- Trust strip ---------- */
+  .trust-strip{
+    background:var(--ink-soft); color:var(--white);
+    display:flex; justify-content:center; gap:48px; flex-wrap:wrap;
+    padding:22px 24px; font-size:13px; letter-spacing:.3px;
+  }
+  .trust-strip span{ display:flex; align-items:center; gap:8px; }
+  .trust-strip .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold); }
+
+  /* ---------- Section ---------- */
+  .section{ padding:80px 0; }
+  .section-head{ margin-bottom:40px; max-width:60ch; }
+  .section-head .kicker{ color:var(--coral); font-size:13px; font-weight:700; letter-spacing:.5px; margin-bottom:10px; display:block; }
+  .section-head h2{ font-size:36px; }
+  .section-head p{ color:#4B5A70; margin-top:12px; font-size:15px; }
+
+  /* ---------- Services ---------- */
+  .service-cols{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; background:var(--white); border:1px solid var(--line); }
+  .service-col{ padding:34px 30px; border-left:1px solid var(--line); }
+  .service-col:first-child{ border-left:none; }
+  .service-col h3{ font-size:19px; margin-bottom:18px; color:var(--ink-soft); }
+  .service-col ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; }
+  .service-col li{ display:flex; align-items:center; gap:12px; font-size:14.5px; }
+  .service-dot{ width:8px; height:8px; background:var(--gold); flex-shrink:0; border-radius:1px; }
+  @media (max-width:860px){
+    .service-cols{grid-template-columns:1fr;}
+    .service-col{border-left:none; border-top:1px solid var(--line);}
+    .service-col:first-child{border-top:none;}
+  }
+
+  /* ---------- Tour packages ---------- */
+  .filters{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:30px; }
+  .filter-chip{
+    border:1px solid var(--line); background:var(--white); padding:9px 18px;
+    font-size:13.5px; border-radius:20px; color:#4B5A70;
+  }
+  .filter-chip.active{ background:var(--ink); border-color:var(--ink); color:var(--white); }
+  .tour-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  @media (max-width:1000px){ .tour-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:640px){ .tour-grid{grid-template-columns:1fr;} }
+
+  .tour-card{ background:var(--white); border:1px solid var(--line); }
+  .tour-media{
+    height:170px; position:relative; display:flex; align-items:flex-end; padding:16px;
+  }
+  .tour-media .cat-badge{
+    background:rgba(11,31,58,.85); color:var(--white); font-size:11px; padding:5px 10px; border-radius:2px;
+  }
+  .tour-body{ padding:20px; }
+  .tour-body h3{ font-size:19px; font-weight:600; font-family:'Inter'; }
+  .tour-body p{ font-size:13.5px; color:#5C6A7E; margin-top:8px; }
+  .tour-foot{ display:flex; justify-content:space-between; align-items:center; margin-top:18px; }
+  .tour-price{ font-weight:700; color:var(--ink); }
+  .tour-price span{ font-size:12px; color:#8A94A6; font-weight:400; }
+  .link-arrow{ font-size:13px; color:var(--coral); font-weight:600; }
+
+  /* ---------- Feature attraction ---------- */
+  .feature-band{
+    background:var(--ink); color:var(--white);
+    padding:64px 6vw; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
+  }
+  .feature-band .badge-circle{
+    width:110px; height:110px; border-radius:50%; border:2px dashed var(--gold);
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    font-size:12px; font-weight:700; color:var(--gold); padding:10px; flex-shrink:0;
+  }
+  .feature-band .row{ display:flex; align-items:center; gap:24px; }
+  .feature-band h2{ color:var(--white); font-size:30px; max-width:14ch; }
+  .feature-band p{ color:#B9C6D8; margin-top:10px; }
+  @media (max-width:860px){ .feature-band{grid-template-columns:1fr;} }
+
+  /* ---------- Testimonials ---------- */
+  .testimonials{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .testi-card{ border-top:2px solid var(--gold); padding-top:18px; }
+  .testi-card p{ font-size:14.5px; color:#4B5A70; }
+  .testi-name{ margin-top:16px; font-size:13.5px; font-weight:700; color:var(--ink); }
+  @media (max-width:860px){ .testimonials{grid-template-columns:1fr;} }
+
+  /* ---------- Booking CTA ---------- */
+  .booking{
+    background:var(--sand-deep); padding:64px 6vw; text-align:center; border-top:1px solid var(--line);
+  }
+  .booking h2{ font-size:30px; }
+  .booking p{ margin-top:10px; color:#4B5A70; max-width:50ch; margin-left:auto; margin-right:auto; }
+  .booking-btns{ display:flex; justify-content:center; gap:14px; margin-top:26px; flex-wrap:wrap; }
+  .btn.coral{ background:var(--coral); color:var(--white); }
+  .btn.coral:hover{ background:#A8371F; }
+  .btn.dark{ background:var(--ink); color:var(--white); }
+  .btn.dark:hover{ background:var(--ink-soft); }
+
+  /* ---------- Footer ---------- */
+  footer{ background:var(--ink); color:#C4CEDC; padding:56px 6vw 20px; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:36px; max-width:1180px; margin:0 auto; }
+  .footer-grid h4{ color:var(--white); font-size:14px; margin-bottom:16px; font-weight:700; }
+  .footer-grid ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:11px; font-size:14px; }
+  .footer-brand{ display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+  .footer-brand .brand-mark{ width:38px; height:38px; font-size:17px; }
+  .footer-brand span{ font-family:'Big Shoulders Display'; font-size:20px; color:var(--white); }
+  .social-row{ display:flex; gap:12px; margin-top:18px; }
+  .social-row a{
+    width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,.25);
+    display:flex; align-items:center; justify-content:center; font-size:13px;
+  }
+  .footer-bottom{
+    max-width:1180px; margin:44px auto 0; padding-top:20px; border-top:1px solid rgba(255,255,255,.12);
+    font-size:12px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+  @media (max-width:860px){ .footer-grid{grid-template-columns:1fr 1fr;} }
+
+  /* ---------- WhatsApp float ---------- */
+  .wa-float{
+    position:fixed; bottom:24px; right:24px; z-index:50;
+    background:#25D366; color:var(--white); width:56px; height:56px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:26px;
+    box-shadow:0 6px 18px rgba(0,0,0,.25); border:none;
+  }
+
+  .placeholder-note{
+    background:var(--gold); color:var(--ink); text-align:center; font-size:13px; padding:10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="placeholder-note">Template built from your flyer's details — review copy, pricing, and images before publishing.</div>
+
+<header class="site">
+  <div class="topbar">✈ Free consultation on tour packages — WhatsApp us anytime</div>
+  <nav class="nav">
+    <div class="brand">
+      <div class="brand-mark">S</div>
+      <div class="brand-name">
+        <div class="full">SAFE LAND TOURISM LLC</div>
+        <div class="sub">DUBAI · UAE</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#tours">Tours</a>
+      <a href="#about">Why Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="https://wa.me/971504915900" class="nav-cta">📞 +971 50 491 5900</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-eyebrow">DUBAI'S MOST TALKED-ABOUT ATTRACTION</div>
+      <h1>Museum of the<br><span class="accent">Future</span>, Dubai</h1>
+      <p class="lead">Skip the queue and step into tomorrow. Safe Land Tourism brings you tickets, transport, and every Dubai experience worth having — planned safely, delivered reliably.</p>
+      <div class="ticket-tag">🎟 Tickets Available Now</div>
+      <div class="hero-btns">
+        <a href="https://wa.me/971504915900" class="btn gold">Book on WhatsApp</a>
+        <a href="#tours" class="btn outline">Browse Tours</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="skyline">
+        <div class="bldg" style="left:2%; width:26px; height:70px;"></div>
+        <div class="bldg" style="left:9%; width:18px; height:44px;"></div>
+        <div class="bldg" style="left:16%; width:22px; height:90px;"></div>
+        <div class="bldg" style="right:2%; width:8px; height:120px;"></div>
+        <div class="bldg" style="right:8%; width:16px; height:60px;"></div>
+        <div class="bldg" style="right:15%; width:20px; height:80px;"></div>
+      </div>
+      <div class="ring"></div>
+      <div class="caption-card">
+        <strong>Safe &amp; Reliable</strong>
+        Licensed Dubai tour operator — trusted by travelers across the UAE.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <span><span class="dot"></span> Licensed LLC in Dubai</span>
+  <span><span class="dot"></span> 24/7 WhatsApp support</span>
+  <span><span class="dot"></span> Airport pick &amp; drop included</span>
+  <span><span class="dot"></span> Trusted by 1000+ travelers</span>
+</div>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">WHAT WE OFFER</span>
+      <h2>Our Services</h2>
+      <p>From the moment you land to the moment you fly home — one team handles it all.</p>
+    </div>
+    <div class="service-cols">
+      <div class="service-col">
+        <h3>Tours &amp; Tickets</h3>
+        <ul>
+          <li><span class="service-dot"></span> Group Tours</li>
+          <li><span class="service-dot"></span> Tickets</li>
+          <li><span class="service-dot"></span> Hotel Booking</li>
+          <li><span class="service-dot"></span> Travel &amp; Transport</li>
+          <li><span class="service-dot"></span> Airport Pick &amp; Drop</li>
+        </ul>
+      </div>
+      <div class="service-col">
+        <h3>Rides &amp; Adventures</h3>
+        <ul>
+          <li><span class="service-dot"></span> Limousine Ride</li>
+          <li><span class="service-dot"></span> Speed Boat Tour</li>
+          <li><span class="service-dot"></span> Sightseeing Tour</li>
+          <li><span class="service-dot"></span> Desert Safari</li>
+          <li><span class="service-dot"></span> City Tours</li>
+        </ul>
+      </div>
+      <div class="service-col">
+        <h3>Signature Experiences</h3>
+        <ul>
+          <li><span class="service-dot"></span> Dhow Cruise Dinner</li>
+          <li><span class="service-dot"></span> Theme Park &amp; Water Park Tickets</li>
+          <li><span class="service-dot"></span> Yacht Tour</li>
+          <li><span class="service-dot"></span> Helicopter Tour</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;" id="tours">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">POPULAR RIGHT NOW</span>
+      <h2>Featured Tours</h2>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="tour-grid" id="tourGrid"></div>
+  </div>
+</section>
+
+<div class="feature-band">
+  <div class="row">
+    <div class="badge-circle">SAFE &amp; RELIABLE</div>
+    <div>
+      <h2>Every trip, planned with care</h2>
+      <p>We're a licensed Dubai tourism company — every booking is confirmed, every guide vetted, every ride on time.</p>
+    </div>
+  </div>
+  <div>
+    <p style="color:#B9C6D8; font-size:15px;">Have a custom itinerary in mind? Tell us your dates and group size, and we'll put together a plan — desert to skyline, sunrise to sunset.</p>
+    <a href="https://wa.me/971504915900" class="btn gold" style="margin-top:18px;">Plan My Trip</a>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">TRAVELER STORIES</span>
+      <h2>What Our Guests Say</h2>
+    </div>
+    <div class="testimonials">
+      <div class="testi-card">
+        <p>"Our desert safari was flawlessly organized, right down to the pickup time. The driver knew exactly where the best dunes were."</p>
+        <div class="testi-name">— Aisha K., London</div>
+      </div>
+      <div class="testi-card">
+        <p>"Booked the Museum of the Future tickets and airport transfer together — one WhatsApp message and it was all sorted."</p>
+        <div class="testi-name">— Rajiv M., Mumbai</div>
+      </div>
+      <div class="testi-card">
+        <p>"The dhow cruise dinner was the highlight of our trip. Great food, great view of the skyline, no hidden charges."</p>
+        <div class="testi-name">— Fatima S., Cairo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="booking" id="about">
+  <h2>Ready to explore Dubai?</h2>
+  <p>Send us your travel dates and we'll build a plan around them — tickets, transport, and experiences, all in one place.</p>
+  <div class="booking-btns">
+    <a href="https://wa.me/971504915900" class="btn coral">WhatsApp +971 50 491 5900</a>
+    <a href="mailto:info@safelandtourism.com" class="btn dark">Email Us</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <div class="brand-mark">S</div>
+        <span>SAFE LAND TOURISM LLC</span>
+      </div>
+      <p style="font-size:14px; max-width:34ch;">Your safe, reliable partner for tours, tickets, and travel across Dubai and the UAE.</p>
+      <div class="social-row">
+        <a href="#">IG</a>
+        <a href="#">FB</a>
+        <a href="#">YT</a>
+        <a href="#">IN</a>
+        <a href="#">TW</a>
+        <a href="#">TT</a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#tours">Tours</a></li>
+        <li><a href="#about">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in Touch</h4>
+      <ul>
+        <li>📧 info@safelandtourism.com</li>
+        <li>🌐 www.safelandtourism.com</li>
+        <li>📱 +971 50 491 5900</li>
+        <li>📍 Dubai, UAE</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Safe Land Tourism LLC. All rights reserved.</span>
+    <span>This is a placeholder template</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/971504915900" class="wa-float" title="Chat on WhatsApp">💬</a>
+
+<script>
+  // Fallback data (used only if content/site.json can't be loaded)
+  const fallbackTours = [
+    {name:"Museum of the Future Ticket", cat:"Tickets", price:"AED 149", note:"per person", desc:"Skip-the-line entry to Dubai's most iconic attraction."},
+    {name:"Evening Desert Safari", cat:"Desert Safari", price:"AED 179", note:"per person", desc:"Dune bashing, camel rides, and a BBQ dinner under the stars."}
+  ];
+  const gradPalette = [
+    "linear-gradient(135deg,#16345C,#C9A227)",
+    "linear-gradient(135deg,#C6432E,#16345C)",
+    "linear-gradient(135deg,#0B1F3A,#C9A227)",
+    "linear-gradient(135deg,#16345C,#5C6A7E)",
+    "linear-gradient(135deg,#0B1F3A,#16345C)",
+    "linear-gradient(135deg,#C9A227,#C6432E)",
+    "linear-gradient(135deg,#16345C,#0B1F3A)",
+    "linear-gradient(135deg,#C6432E,#C9A227)",
+    "linear-gradient(135deg,#16345C,#C6432E)"
+  ];
+
+  let tours = [];
+  let cats = ["All"];
+  let activeCat = "All";
+  const filtersEl = document.getElementById('filters');
+
+  function buildCats(list){
+    const set = new Set();
+    list.forEach(t => set.add(t.cat));
+    cats = ["All", ...set];
+  }
+
+  function renderFilters(){
+    filtersEl.innerHTML = '';
+    cats.forEach(c => {
+      const b = document.createElement('button');
+      b.className = 'filter-chip' + (c===activeCat ? ' active' : '');
+      b.textContent = c;
+      b.onclick = () => { activeCat = c; renderFilters(); renderTours(); };
+      filtersEl.appendChild(b);
+    });
+  }
+
+  function renderTours(){
+    const grid = document.getElementById('tourGrid');
+    grid.innerHTML = '';
+    const list = tours.filter(t => activeCat === "All" || t.cat === activeCat);
+    list.forEach((t, i) => {
+      const grad = gradPalette[i % gradPalette.length];
+      const card = document.createElement('div');
+      card.className = 'tour-card';
+      card.innerHTML = `
+        <div class="tour-media" style="background:${grad}">
+          <span class="cat-badge">${t.cat}</span>
+        </div>
+        <div class="tour-body">
+          <h3>${t.name}</h3>
+          <p>${t.desc}</p>
+          <div class="tour-foot">
+            <div class="tour-price">${t.price} <span>${t.note}</span></div>
+            <a href="https://wa.me/971504915900" class="link-arrow">Enquire →</a>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function initTours(list){
+    tours = list;
+    buildCats(tours);
+    renderFilters();
+    renderTours();
+  }
+
+  fetch('content/site.json')
+    .then(r => r.json())
+    .then(data => initTours(data.tours))
+    .catch(() => initTours(fallbackTours));
+</script>
+
+</body>
+</html>
