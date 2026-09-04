@@ -1,0 +1,25 @@
+{
+  "reviews": [
+    {
+      "name": "Aisha K.",
+      "location": "London",
+      "review": "Our desert safari was flawlessly organized, right down to the pickup time.",
+      "rating": 5,
+      "photo": ""
+    },
+    {
+      "name": "Rajiv M.",
+      "location": "Mumbai",
+      "review": "Booked the Museum of the Future tickets and airport transfer together — everything was sorted through WhatsApp.",
+      "rating": 5,
+      "photo": ""
+    },
+    {
+      "name": "Fatima S.",
+      "location": "Cairo",
+      "review": "The dhow cruise dinner was the highlight of our trip. Great food and great views.",
+      "rating": 5,
+      "photo": ""
+    }
+  ]
+}
